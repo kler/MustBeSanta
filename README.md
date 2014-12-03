@@ -3,16 +3,35 @@ MustBeSanta
 
 Must Be Santa generator
 
+== Prepare ==
+
+  ./composer install
+
+
+== Execute ==
+  
+  php index.php
+
+
+== Execute tests ==
+
+  bin/phpunit tests/MustBeSanta/GeneratorTest.php
+
+
+== WAT? ==
+
 Goal is to make it generate the lyrics from Must Be Santa, the Bob Dylan version.
 
     Who's got a beard that's long and white?
     Santa's got a beard that's long and white
     Who comes around on a special night?
     Santa comes around on a special night
-    Special night, beard that's white
     
-    Must be santa, must be santa
-    Must be santa, santa claus
+    Special Night, beard that's white
+    
+    Must be Santa
+    Must be Santa
+    Must be Santa, Santa Clause
     
     Who wears boots and a suit of red?
     Santa wears boots and a suit of red
@@ -21,20 +40,23 @@ Goal is to make it generate the lyrics from Must Be Santa, the Bob Dylan version
     
     Cap on head, suit that's red
     Special night, beard that's white
-    Must be santa, must be santa
-    Must be santa, santa claus
+    
+    Must be Santa
+    Must be Santa
+    Must be Santa, Santa Clause
     
     Who's got a big red cherry nose?
     Santa's got a big red cherry nose
-    Who laughs this way, "ho, ho, ho!"?
-    Santa laughs this way, "ho, ho, ho!"
+    Who laughs this way HO HO HO?
+    Santa laughs this way HO HO HO
     
-    Ho, ho, ho, cherry nose
-    
+    HO HO HO, cherry nose
     Cap on head, suit that's red
     Special night, beard that's white
-    Must be santa, must be santa
-    Must be santa, santa claus
+    
+    Must be Santa
+    Must be Santa
+    Must be Santa, Santa Clause
     
     Who very soon will come our way?
     Santa very soon will come our way
@@ -42,20 +64,30 @@ Goal is to make it generate the lyrics from Must Be Santa, the Bob Dylan version
     Santa's little reindeer pull his sleigh
     
     Reindeer sleigh, come our way
-    Ho, ho, ho, cherry nose
+    HO HO HO, cherry nose
     Cap on head, suit that's red
     Special night, beard that's white
-    Must be santa, must be santa
-    Must be santa, santa claus
     
-    Dasher, dancer, prancer, vixen
-    Eisenhower, kennedy, johnson, nixon
-    Dasher, dancer, prancer, vixen
-    Carter, reagan, bush, and clinton
+    Must be Santa
+    Must be Santa
+    Must be Santa, Santa Clause
+    
+    Dasher, Dancer, Prancer, Vixen
+    Eisenhower, Kennedy, Johnson, Nixon
+    Comet, Cupid, Donner and Blitzen
+    Carter, Reagan, Bush and Clinton
     
     Reindeer sleigh, come our way
-    Ho, ho, ho, cherry nose
+    HO HO HO, cherry nose
     Cap on head, suit that's red
     Special night, beard that's white
-    Must be santa, must be santa
-    Must be santa, santa claus
+    
+    Must be Santa
+    Must be Santa
+    Must be Santa, Santa Clause
+    
+    Must be Santa
+    Must be Santa
+    Must be Santa, Santa Clause
+    
+    http://muzikum.eu/en/123-3919-160986/bob-dylan/must-be-santa-lyrics.html#ixzz3Ks02rn5f

@@ -1,0 +1,6 @@
+{
+    "directories": ["."],
+    "main": "index.php",
+    "output": "mustbesanta.phar",
+    "stub": true
+}

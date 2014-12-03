@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-4": {"MustBeSanta\\": "src/MustBeSanta"}
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "4.3.*",
+        "kherge/box": "~2.4"
+    },
+
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
