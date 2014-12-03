@@ -32,7 +32,7 @@ Goal is to make it generate the lyrics from Must Be Santa, the Bob Dylan version
     Who comes around on a special night?
     Santa comes around on a special night
     
-    Special Night, beard that's white
+    Special night, beard that's white
     
     Must be Santa
     Must be Santa

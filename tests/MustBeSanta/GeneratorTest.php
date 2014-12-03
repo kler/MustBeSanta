@@ -8,7 +8,7 @@ Santa's got a beard that's long and white
 Who comes around on a special night?
 Santa comes around on a special night
 
-Special Night, beard that's white
+Special night, beard that's white
 
 Must be Santa
 Must be Santa
