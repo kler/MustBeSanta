@@ -3,22 +3,26 @@ MustBeSanta
 
 Must Be Santa generator
 
-== Prepare ==
+Prepare
+=======
 
   ./composer install
 
 
-== Execute ==
+Execute
+=======
   
   php index.php
 
 
-== Execute tests ==
+Execute tests
+=============
 
   bin/phpunit tests/MustBeSanta/GeneratorTest.php
 
 
-== WAT? ==
+WAT?
+====
 
 Goal is to make it generate the lyrics from Must Be Santa, the Bob Dylan version.
 
