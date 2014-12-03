@@ -1,5 +1,6 @@
 MustBeSanta
 ===========
+[![Build Status](https://travis-ci.org/kler/MustBeSanta.svg?branch=master)](https://travis-ci.org/kler/MustBeSanta)
 
 Must Be Santa generator
 
