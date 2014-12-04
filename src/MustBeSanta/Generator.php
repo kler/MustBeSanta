@@ -5,10 +5,10 @@ namespace MustBeSanta;
 class Generator
 {
     private $recap = [
-        'Special night, beard that\'s white',
-        'Cap on head, suit that\'s red',
-        'HO HO HO, cherry nose',
         'Reindeer sleigh, come our way',
+        'HO HO HO, cherry nose',
+        'Cap on head, suit that\'s red',
+        'Special night, beard that\'s white',
     ];
 
     private function getSanta()
@@ -28,13 +28,29 @@ class Generator
 
     private function getRecap($i)
     {
-        $result = '' . $i . ' ';
-        for ($j = (int)floor($i / 3); $j > 0; $j--) {
-            $result .= $j . ' ';
-            if ($j >= 4) continue;
-            $result .= $this->recap[$j] . PHP_EOL;
+        switch ((int)floor($i / 3)) {
+            case 1:
+                return $this->recap[3] . PHP_EOL;
+            case 2:
+                return
+                    $this->recap[2] . PHP_EOL
+                    . $this->recap[3] . PHP_EOL;
+            case 3:
+                return
+                    $this->recap[1] . PHP_EOL
+                    . $this->recap[2] . PHP_EOL
+                    . $this->recap[3] . PHP_EOL;
+            case 4:
+            case 5:
+                return
+                    $this->recap[0] . PHP_EOL
+                    . $this->recap[1] . PHP_EOL
+                    . $this->recap[2] . PHP_EOL
+                    . $this->recap[3] . PHP_EOL;
+            default:
+                return $i . PHP_EOL;
+
         }
-        return $result;
     }
 
     public function execute()
@@ -66,7 +82,8 @@ class Generator
             $result .= ($i % 4 === 3 ? PHP_EOL . $this->getRecap($i) . PHP_EOL . $this->getSanta() . PHP_EOL . PHP_EOL : '');
         }
 
-        $result .= $this->getReindeers() . PHP_EOL . PHP_EOL;
+        $result .= $this->getReindeers() . PHP_EOL;
+        $result .= $this->getRecap(15) . PHP_EOL;
         $result .= $this->getSanta() . PHP_EOL . PHP_EOL . $this->getSanta();
 
         return $result;
