@@ -2,6 +2,7 @@
 
 class GeneratorTest extends PHPUnit_Framework_TestCase {
 
+    /** @var string Facit */
     private $originalText = <<<EOF
 Who's got a beard that's long and white?
 Santa's got a beard that's long and white
@@ -72,12 +73,48 @@ Must be Santa
 Must be Santa, Santa Clause
 EOF;
 
-    function testTest()
+    /** @var array Sidekicks */
+    private $reindeers = [
+        'Dasher',
+        'Dancer',
+        'Prancer',
+        'Vixen',
+        'Eisenhower',
+        'Kennedy',
+        'Johnson',
+        'Nixon',
+        'Comet',
+        'Cupid',
+        'Donner',
+        'Blitzen',
+        'Carter',
+        'Reagan',
+        'Bush',
+        'Clinton'
+    ];
+
+    /**
+     * Test Generator
+     */
+    function testGenerator()
     {
+        $protagonist = new MustBeSanta\Ensemble\Protagonist();
+        $protagonist->setFirstName('Santa');
+        $protagonist->setLastName('Clause');
+
+        $sidekicks = new MustBeSanta\Ensemble\Sidekicks();
+        foreach ($this->reindeers as $reindeerName) {
+            $deuteragonist = new MustBeSanta\Ensemble\Sidekick();
+            $deuteragonist->setFirstName($reindeerName);
+            $sidekicks->addSidekick($deuteragonist);
+        }
+
         $generator = new MustBeSanta\Generator();
+        $generator->setProtagonist($protagonist);
+        $generator->setSidekicks($sidekicks);
+        $generator->setSidekicksFormatter(new \MustBeSanta\Ensemble\SidekicksFormatter());
         $text = $generator->execute();
         $this->assertEquals($this->originalText, $text);
     }
-
 }
  

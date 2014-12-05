@@ -2,8 +2,13 @@
 
 namespace MustBeSanta;
 
+use MustBeSanta\Ensemble\Protagonist;
+use MustBeSanta\Ensemble\Sidekicks;
+use MustBeSanta\Ensemble\SidekicksFormatter;
+
 class Generator
 {
+    /** @var array Recap of story */
     private $recap = [
         'Reindeer sleigh, come our way',
         'HO HO HO, cherry nose',
@@ -11,21 +16,97 @@ class Generator
         'Special night, beard that\'s white',
     ];
 
-    private function getSanta()
+    /** @var Protagonist */
+    private $protagonist;
+    /** @var Sidekicks */
+    private $sidekicks;
+    /** @var SidekicksFormatter */
+    private $sidekicksFormatter;
+
+    /**
+     * @return Protagonist
+     */
+    public function getProtagonist()
     {
-        return str_repeat('Must be Santa' . PHP_EOL, 2) . 'Must be Santa, Santa Clause';
+        return $this->protagonist;
     }
 
+    /**
+     * @param Protagonist $protagonist
+     */
+    public function setProtagonist($protagonist)
+    {
+        $this->protagonist = $protagonist;
+    }
+
+    /**
+     * @return Sidekicks
+     */
+    public function getSidekicks()
+    {
+        return $this->sidekicks;
+    }
+
+    /**
+     * @param Sidekicks $sidekicks
+     */
+    public function setSidekicks($sidekicks)
+    {
+        $this->sidekicks = $sidekicks;
+    }
+
+    /**
+     * @return SidekicksFormatter
+     */
+    public function getSidekicksFormatter()
+    {
+        return $this->sidekicksFormatter;
+    }
+
+    /**
+     * @param SidekicksFormatter $sidekicksFormatter
+     */
+    public function setSidekicksFormatter($sidekicksFormatter)
+    {
+        $this->sidekicksFormatter = $sidekicksFormatter;
+    }
+
+    /**
+     * @return string
+     */
+    private function getSanta()
+    {
+        $protagonist = $this->getProtagonist();
+        $firstName = $protagonist->getFirstName();
+        $lastName = $protagonist->getLastName();
+        return
+            str_repeat('Must be ' . $firstName . PHP_EOL, 2)
+            . 'Must be ' . $firstName
+            . ', ' . $firstName . ' ' . $lastName;
+    }
+
+    /**
+     * @return string
+     */
     private function getReindeers()
     {
+        $this->getSidekicksFormatter()->setSidekicks($this->getSidekicks());
+        return $this->getSidekicksFormatter()->format(4);
+
+        /*
         return
             'Dasher, Dancer, Prancer, Vixen' . PHP_EOL
             . 'Eisenhower, Kennedy, Johnson, Nixon' . PHP_EOL
             . 'Comet, Cupid, Donner and Blitzen' . PHP_EOL
             . 'Carter, Reagan, Bush and Clinton' . PHP_EOL
         ;
+        */
     }
 
+    /**
+     * @param $i
+     * @return string
+     */
     private function getRecap($i)
     {
         switch ((int)floor($i / 3)) {
@@ -53,6 +134,9 @@ class Generator
         }
     }
 
+    /**
+     * @return string
+     */
     public function execute()
     {
         $sentences = [
