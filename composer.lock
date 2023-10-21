@@ -1,43 +1,47 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "a67c726b1037b4d654066dffaca023e9",
+    "content-hash": "27609f05c031453b0ec434e577966a86",
     "packages": [],
     "packages-dev": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.1",
+            "version": "1.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633"
+                "reference": "fb0d71a7393298a7b232cbf4c8b1f73f3ec3d5af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/6a6bec0670bb6e71a263b08bc1b98ea242928633",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/fb0d71a7393298a7b232cbf4c8b1f73f3ec3d5af",
+                "reference": "fb0d71a7393298a7b232cbf4c8b1f73f3ec3d5af",
                 "shasum": ""
             },
             "require": {
-                "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
+                "doctrine/lexer": "^1 || ^2",
+                "ext-tokenizer": "*",
+                "php": "^7.1 || ^8.0",
+                "psr/cache": "^1 || ^2 || ^3"
             },
             "require-dev": {
-                "doctrine/cache": "1.*",
-                "phpunit/phpunit": "4.*"
+                "doctrine/cache": "^1.11 || ^2.0",
+                "doctrine/coding-standard": "^9 || ^10",
+                "phpstan/phpstan": "~1.4.10 || ^1.8.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "symfony/cache": "^4.4 || ^5.4 || ^6",
+                "vimeo/psalm": "^4.10"
+            },
+            "suggest": {
+                "php": "PHP 8.0 or higher comes with attributes, a native replacement for annotations"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Annotations\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -46,16 +50,16 @@
             ],
             "authors": [
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
                 },
                 {
                     "name": "Jonathan Wage",
@@ -67,13 +71,64 @@
                 }
             ],
             "description": "Docblock Annotations Parser",
-            "homepage": "http://www.doctrine-project.org",
+            "homepage": "https://www.doctrine-project.org/projects/annotations.html",
             "keywords": [
                 "annotations",
                 "docblock",
                 "parser"
             ],
-            "time": "2014-09-25 16:45:30"
+            "support": {
+                "issues": "https://github.com/doctrine/annotations/issues",
+                "source": "https://github.com/doctrine/annotations/tree/1.14.3"
+            },
+            "time": "2023-02-01T09:20:38+00:00"
+        },
+        {
+            "name": "doctrine/deprecations",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/deprecations.git",
+                "reference": "4f2d4f2836e7ec4e7a8625e75c6aa916004db931"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/4f2d4f2836e7ec4e7a8625e75c6aa916004db931",
+                "reference": "4f2d4f2836e7ec4e7a8625e75c6aa916004db931",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9",
+                "phpstan/phpstan": "1.4.10 || 1.10.15",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psalm/plugin-phpunit": "0.18.4",
+                "psr/log": "^1 || ^2 || ^3",
+                "vimeo/psalm": "4.30.0 || 5.12.0"
+            },
+            "suggest": {
+                "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Deprecations\\": "lib/Doctrine/Deprecations"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A small layer on top of trigger_error(E_USER_DEPRECATED) or PSR-3 logging with options to disable all deprecations or selectively for packages.",
+            "homepage": "https://www.doctrine-project.org/",
+            "support": {
+                "issues": "https://github.com/doctrine/deprecations/issues",
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.2"
+            },
+            "time": "2023-09-27T20:04:15+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -127,29 +182,37 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2014-10-13 12:58:55"
+            "time": "2014-10-13T12:58:55+00:00"
         },
         {
             "name": "doctrine/lexer",
-            "version": "v1.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "2f708a85bb3aab5d99dab8be435abd73e0b18acb"
+                "reference": "39ab8fcf5a51ce4b85ca97c7a7d033eb12831124"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/2f708a85bb3aab5d99dab8be435abd73e0b18acb",
-                "reference": "2f708a85bb3aab5d99dab8be435abd73e0b18acb",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/39ab8fcf5a51ce4b85ca97c7a7d033eb12831124",
+                "reference": "39ab8fcf5a51ce4b85ca97c7a7d033eb12831124",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "doctrine/deprecations": "^1.0",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9 || ^10",
+                "phpstan/phpstan": "^1.3",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psalm/plugin-phpunit": "^0.18.3",
+                "vimeo/psalm": "^4.11 || ^5.0"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Lexer\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -159,8 +222,7 @@
             "authors": [
                 {
                     "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
+                    "email": "guilhermeblanco@gmail.com"
                 },
                 {
                     "name": "Roman Borschel",
@@ -168,18 +230,37 @@
                 },
                 {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "http://www.doctrine-project.org",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
             "keywords": [
+                "annotations",
+                "docblock",
                 "lexer",
-                "parser"
+                "parser",
+                "php"
             ],
-            "time": "2013-01-12 18:59:04"
+            "support": {
+                "issues": "https://github.com/doctrine/lexer/issues",
+                "source": "https://github.com/doctrine/lexer/tree/2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Flexer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-12-14T08:49:07+00:00"
         },
         {
             "name": "herrera-io/annotations",
@@ -233,7 +314,7 @@
                 "doctrine",
                 "tokenizer"
             ],
-            "time": "2014-02-03 17:34:08"
+            "time": "2014-02-03T17:34:08+00:00"
         },
         {
             "name": "herrera-io/box",
@@ -293,7 +374,7 @@
             "keywords": [
                 "phar"
             ],
-            "time": "2014-02-07 15:48:46"
+            "time": "2014-02-07T15:48:46+00:00"
         },
         {
             "name": "herrera-io/json",
@@ -354,7 +435,7 @@
                 "schema",
                 "validate"
             ],
-            "time": "2013-10-30 16:51:34"
+            "time": "2013-10-30T16:51:34+00:00"
         },
         {
             "name": "herrera-io/phar-update",
@@ -412,7 +493,7 @@
                 "phar",
                 "update"
             ],
-            "time": "2013-11-09 17:13:13"
+            "time": "2013-11-09T17:13:13+00:00"
         },
         {
             "name": "herrera-io/version",
@@ -464,7 +545,7 @@
                 "semantic",
                 "version"
             ],
-            "time": "2014-05-27 05:29:25"
+            "time": "2014-05-27T05:29:25+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -530,7 +611,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2014-08-25 02:48:14"
+            "time": "2014-08-25T02:48:14+00:00"
         },
         {
             "name": "kherge/amend",
@@ -585,7 +666,7 @@
                 "phar",
                 "update"
             ],
-            "time": "2014-11-05 15:29:01"
+            "time": "2014-11-05T15:29:01+00:00"
         },
         {
             "name": "kherge/box",
@@ -653,7 +734,7 @@
             "keywords": [
                 "phar"
             ],
-            "time": "2014-02-27 16:19:20"
+            "time": "2014-02-27T16:19:20+00:00"
         },
         {
             "name": "phine/exception",
@@ -703,7 +784,7 @@
             "keywords": [
                 "exception"
             ],
-            "time": "2013-08-27 17:43:25"
+            "time": "2013-08-27T17:43:25+00:00"
         },
         {
             "name": "phine/path",
@@ -756,7 +837,7 @@
                 "path",
                 "system"
             ],
-            "time": "2013-10-15 22:58:04"
+            "time": "2013-10-15T22:58:04+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -854,7 +935,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-11-10 03:08:59"
+            "time": "2014-11-10T03:08:59+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -919,7 +1000,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-12-03 06:41:44"
+            "time": "2014-12-03T06:41:44+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -964,7 +1045,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2013-10-10 15:34:57"
+            "time": "2013-10-10T15:34:57+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -1008,7 +1089,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2014-01-30 17:20:04"
+            "time": "2014-01-30T17:20:04+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -1052,7 +1133,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2013-08-02 07:42:54"
+            "time": "2013-08-02T07:42:54+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -1101,7 +1182,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2014-08-31 06:12:13"
+            "time": "2014-08-31T06:12:13+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -1175,7 +1256,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-11-11 10:11:09"
+            "time": "2014-11-11T10:11:09+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1230,7 +1311,56 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-10-03 05:12:11"
+            "time": "2014-10-03T05:12:11+00:00"
+        },
+        {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
+            "time": "2016-08-06T20:24:11+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -1294,7 +1424,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2014-05-11 23:00:21"
+            "time": "2014-05-11T23:00:21+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -1346,7 +1476,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2014-08-15 10:29:00"
+            "time": "2014-08-15T10:29:00+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -1396,7 +1526,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-10-25 08:00:45"
+            "time": "2014-10-25T08:00:45+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -1461,7 +1591,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2014-09-10 00:51:36"
+            "time": "2014-09-10T00:51:36+00:00"
         },
         {
             "name": "sebastian/version",
@@ -1496,7 +1626,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2014-03-07 15:35:33"
+            "time": "2014-03-07T15:35:33+00:00"
         },
         {
             "name": "seld/jsonlint",
@@ -1542,7 +1672,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2014-09-05 15:36:20"
+            "time": "2014-09-05T15:36:20+00:00"
         },
         {
             "name": "symfony/console",
@@ -1599,7 +1729,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-02 20:19:20"
+            "time": "2014-12-02T20:19:20+00:00"
         },
         {
             "name": "symfony/finder",
@@ -1646,7 +1776,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-02 20:19:20"
+            "time": "2014-12-02T20:19:20+00:00"
         },
         {
             "name": "symfony/process",
@@ -1693,7 +1823,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-02 20:19:20"
+            "time": "2014-12-02T20:19:20+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1740,13 +1870,15 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-02 20:19:20"
+            "time": "2014-12-02T20:19:20+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
