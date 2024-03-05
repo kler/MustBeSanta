@@ -1,6 +1,6 @@
 <?php
 
-class GeneratorTest extends PHPUnit_Framework_TestCase {
+class GeneratorTest extends \PHPUnit\Framework\TestCase {
 
     /** @var string Facit */
     private $originalText = <<<EOF
@@ -96,7 +96,7 @@ EOF;
     /**
      * Test Generator
      */
-    function testGenerator()
+    public function testGenerator()
     {
         $protagonist = new MustBeSanta\Ensemble\Protagonist();
         $protagonist->setFirstName('Santa');
@@ -117,4 +117,3 @@ EOF;
         $this->assertEquals($this->originalText, $text);
     }
 }
- 

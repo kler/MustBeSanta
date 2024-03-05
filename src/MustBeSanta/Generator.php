@@ -92,15 +92,6 @@ class Generator
     {
         $this->getSidekicksFormatter()->setSidekicks($this->getSidekicks());
         return $this->getSidekicksFormatter()->format(4);
-
-        /*
-        return
-            'Dasher, Dancer, Prancer, Vixen' . PHP_EOL
-            . 'Eisenhower, Kennedy, Johnson, Nixon' . PHP_EOL
-            . 'Comet, Cupid, Donner and Blitzen' . PHP_EOL
-            . 'Carter, Reagan, Bush and Clinton' . PHP_EOL
-        ;
-        */
     }
 
     /**

@@ -10,7 +10,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
     /**
      * @return array
      */
-    public function getSidekicks()
+    public function getSidekicks(): array
     {
         return $this->sidekicks;
     }
@@ -43,7 +43,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * <p>
      * The return value will be casted to boolean if non-boolean was returned.
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->sidekicks[$offset]);
     }
@@ -57,7 +57,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * </p>
      * @return mixed Can return all value types.
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->sidekicks[$offset];
     }
@@ -74,7 +74,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * </p>
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->sidekicks[$offset] = $value;
     }
@@ -88,7 +88,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * </p>
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->sidekicks[$offset]);
     }
@@ -99,7 +99,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * @link http://php.net/manual/en/iterator.current.php
      * @return mixed Can return any type.
      */
-    public function current()
+    public function current(): mixed
     {
         return current($this->sidekicks);
     }
@@ -110,9 +110,9 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * @link http://php.net/manual/en/iterator.next.php
      * @return mixed
      */
-    public function next()
+    public function next(): void
     {
-        return next($this->sidekicks);
+        next($this->sidekicks);
     }
 
     /**
@@ -121,7 +121,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * @link http://php.net/manual/en/iterator.key.php
      * @return mixed scalar on success, or null on failure.
      */
-    public function key()
+    public function key(): mixed
     {
         return key($this->sidekicks);
     }
@@ -133,7 +133,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * @return boolean The return value will be casted to boolean and then evaluated.
      * Returns true on success or false on failure.
      */
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->sidekicks[$this->key()]);
     }
@@ -144,7 +144,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * @link http://php.net/manual/en/iterator.rewind.php
      * @return void Any returned value is ignored.
      */
-    public function rewind()
+    public function rewind(): void
     {
         reset($this->sidekicks);
     }
@@ -158,7 +158,7 @@ class Sidekicks implements \ArrayAccess, \Iterator, \Countable {
      * <p>
      * The return value is cast to an integer.
      */
-    public function count()
+    public function count(): int
     {
         return count($this->sidekicks);
     }

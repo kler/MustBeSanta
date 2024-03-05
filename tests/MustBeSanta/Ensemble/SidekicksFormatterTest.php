@@ -1,6 +1,6 @@
 <?php
 
-class SidekicksFormatterTest extends PHPUnit_Framework_TestCase
+class SidekicksFormatterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param $amount
